@@ -7,7 +7,7 @@ import {PokemonService} from "../../services/pokemon.service";
   styleUrls: ['./pokemon-card.component.scss']
 })
 export class PokemonCardComponent implements OnInit {
-  @Input() pokemons: any;
+  @Input() pokemon: any;
 
   constructor(private pokemonService: PokemonService) { }
 

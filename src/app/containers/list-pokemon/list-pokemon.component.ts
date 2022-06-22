@@ -3,7 +3,7 @@ import {concat, Subscription} from "rxjs";
 import {PokemonService} from "../../services/pokemon.service";
 
 @Component({
-  selector: 'app-list-pokemon',
+  selector: 'list-pokemon',
   templateUrl: './list-pokemon.component.html',
   styleUrls: ['./list-pokemon.component.scss']
 })
