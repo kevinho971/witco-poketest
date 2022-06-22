@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Pokedex</h1>
+  <div class="row" fxLayout="row wrap" fxLayoutAlign="space-around">
+    <pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></pokemon-card>
+  </div>
+  <div class="row text-center">
+    <button mat-raised-button (click)="loadMore()">
+      <div role="status" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+      Voir plus
+    </button>
+  </div>
+</div>
