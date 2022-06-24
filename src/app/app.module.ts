@@ -13,13 +13,16 @@ import {MatChipsModule} from "@angular/material/chips";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { DetailPokemonComponent } from './containers/detail-pokemon/detail-pokemon.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {ChartsModule} from "ng2-charts";
+import { PokemonStatsComponent } from './components/pokemon-stats/pokemon-stats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListPokemonComponent,
     PokemonCardComponent,
-    DetailPokemonComponent
+    DetailPokemonComponent,
+    PokemonStatsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatButtonModule,
     MatChipsModule,
     FlexLayoutModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

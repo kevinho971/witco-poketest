@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs";
 import {PokemonService} from "../../services/pokemon.service";
@@ -10,8 +10,11 @@ import {PokemonService} from "../../services/pokemon.service";
 })
 export class DetailPokemonComponent implements OnInit {
   pokemon: any = null;
-
+  stats: any[] = [];
   subscriptions: Subscription[] = [];
+  loadData: boolean = true;
+  labels: string[] = [];
+  baseStat: number[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -29,8 +32,14 @@ export class DetailPokemonComponent implements OnInit {
 
       this.subscription = this.pokemonService.get(params['name']).subscribe(response => {
         this.pokemon = response;
-        console.log(response)
-      }, error => console.log('Error Occurred:', error));
+      }, error => {
+        console.log('Error Occurred:', error)
+      }, () => {
+        this.pokemon.stats.map((stat: any) => {
+          this.stats = [...this.stats, stat];
+        })
+        this.setValueToChart()
+      });
     });
   }
 
@@ -38,12 +47,15 @@ export class DetailPokemonComponent implements OnInit {
     this.subscriptions.forEach(subscription => subscription ? subscription.unsubscribe() : 0);
   }
 
-  getType(pokemon: any): string {
-    return this.pokemonService.getType(pokemon);
+  setValueToChart() {
+   this.stats.map(stat => {
+      this.labels = [...this.labels, stat.stat.name];
+      this.baseStat = [...this.baseStat, stat.base_stat];
+    })
+    this.loadData = false;
   }
 
-  getId(url: string): number {
-    const splitUrl = url.split('/')
-    return +splitUrl[splitUrl.length - 2];
+  getType(pokemon: any): string {
+    return this.pokemonService.getType(pokemon);
   }
 }
