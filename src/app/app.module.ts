@@ -13,6 +13,7 @@ import {MatChipsModule} from "@angular/material/chips";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { DetailPokemonComponent } from './containers/detail-pokemon/detail-pokemon.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {ChartsModule} from "ng2-charts";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatButtonModule,
     MatChipsModule,
     FlexLayoutModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
