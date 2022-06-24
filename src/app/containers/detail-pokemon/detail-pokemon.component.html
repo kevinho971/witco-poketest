@@ -9,12 +9,7 @@
   <div class="right bg-{{getType(pokemon)}}">
     <div class="container" fxLayout="column" fxLayoutAlign="center center">
       <h2>Stats</h2>
-      <canvas *ngIf="!loadData" baseChart
-              [datasets]="radarChartData"
-              [options]="radarChartOptions"
-              [labels]="radarChartLabels"
-              [chartType]="radarChartType">
-      </canvas>
+      <pokemon-stats *ngIf="!loadData" [labels]="labels" [stats]="baseStat"></pokemon-stats>
     </div>
   </div>
 </div>
