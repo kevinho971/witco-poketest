@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs";
 import {PokemonService} from "../../services/pokemon.service";
-import {ChartDataSets, ChartType, RadialChartOptions} from "chart.js";
-import {Colors, Label, ThemeService} from "ng2-charts";
 
 @Component({
   selector: 'detail-pokemon',
