@@ -1,5 +1,14 @@
-<div class="container">
-  <h1>Detail</h1>
-  <button mat-raised-button [routerLink]="['/']">Back</button>
-  <pokemon-card *ngIf="pokemon" [pokemon]="pokemon"></pokemon-card>
+<div class="details" fxLayout="row">
+  <div class="left">
+    <div class="container" fxLayout="column" fxLayoutAlign="center center">
+      <h2>Detail</h2>
+      <button mat-raised-button [routerLink]="['/']">Back</button>
+      <pokemon-card *ngIf="pokemon" [pokemon]="pokemon"></pokemon-card>
+    </div>
+  </div>
+  <div class="right bg-{{getType(pokemon)}}">
+    <div class="container" fxLayout="column" fxLayoutAlign="center center">
+      <h2>Stats</h2>
+    </div>
+  </div>
 </div>
