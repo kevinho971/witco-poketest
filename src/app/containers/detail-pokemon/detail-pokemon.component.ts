@@ -34,7 +34,6 @@ export class DetailPokemonComponent implements OnInit {
 
       this.subscription = this.pokemonService.get(params['name']).subscribe(response => {
         this.pokemon = response;
-        console.log(response)
       }, error => {
         console.log('Error Occurred:', error)
       }, () => {
