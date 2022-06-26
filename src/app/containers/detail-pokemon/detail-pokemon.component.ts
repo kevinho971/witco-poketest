@@ -38,7 +38,7 @@ export class DetailPokemonComponent implements OnInit {
         this.pokemon.stats.map((stat: any) => {
           this.stats = [...this.stats, stat];
         })
-        this.setValueToChart()
+        this.setValueToChart();
       });
     });
   }

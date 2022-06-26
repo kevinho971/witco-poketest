@@ -1,4 +1,4 @@
-<div class="details" fxLayout="row">
+<div class="details" fxLayout="row" fxLayout.lt-md="column">
   <div class="left">
     <div class="container" fxLayout="column" fxLayoutAlign="center center">
       <h2>Detail</h2>
@@ -8,6 +8,12 @@
   </div>
   <div class="right bg-{{getType(pokemon)}}">
     <div class="container" fxLayout="column" fxLayoutAlign="center center">
+      <h2>Informations</h2>
+      <div class="infos" *ngIf="pokemon">
+        <p>Number : {{ pokemon.id }}</p>
+        <p>Height : {{ pokemon.height }}cm</p>
+        <p>Weight : {{ pokemon.weight }}kg</p>
+      </div>
       <h2>Stats</h2>
       <pokemon-stats *ngIf="!loadData" [labels]="labels" [stats]="baseStat"></pokemon-stats>
     </div>
